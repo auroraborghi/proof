@@ -1,0 +1,7 @@
+# Development Dependencies for venv
+-c requirements.txt
+ipython
+pip-tools
+pycodestyle
+pytest
+pylint
