@@ -4,5 +4,11 @@
 #
 #    pip-compile --no-emit-index-url --no-emit-trusted-host
 #
+certifi==2021.10.8
+    # via elasticsearch
 colorama==0.4.4
     # via proof (setup.py)
+elasticsearch==7.14.2
+    # via proof (setup.py)
+urllib3==1.26.9
+    # via elasticsearch
