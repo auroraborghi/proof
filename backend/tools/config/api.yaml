@@ -1,0 +1,58 @@
+# NOTE: the following JSON and YAML configurations are the same
+
+# {
+#   "myParam": "myValue",
+#   "myInt": 1,
+#   "myFloat": 2.0,
+#   "myBool": true,
+#   "myArray": [
+#     1,
+#     2,
+#     3
+#   ],
+#   "myObject": {
+#     "nestedKeyOne": {
+#       "x": 1,
+#       "y": 3
+#     },
+#     "nestedKeyTwo": 2
+#   },
+#   "myArrayOfObjects": [
+#     {
+#       "keyOne": 1,
+#       "keyTwo": 2
+#     },
+#     {
+#       "keyOne": 3,
+#       "keyTwo": 4
+#     }
+#   ],
+#   "myNull": null,
+#   "myEmptyArray": [],
+#   "myEmptyObject": {}
+# }
+
+# myParam: myValue  # same as myParam: "myValue" or myParam: 'myValue'
+# myInt: 1  # NOT the same as myInt: '1' or myInt: 1.0
+# myFloat: 2.0
+# myBool: true  # same as myBool: True and NOT the same as myBool: 'true'
+# myArray:  # same as myArray: [1, 2, 3]
+#   - 1
+#   - 2
+#   - 3
+# myObject:
+#   nestedKeyOne:
+#     x: 1
+#     y: 3
+#   nestedKeyTwo: 2
+# myArrayOfObjects:
+#   - keyOne: 1
+#     keyTwo: 2
+#   - keyOne: 3
+#     keyTwo: 4
+# myNull: null
+# myEmptyArray: []
+# myEmptyObject: {}
+
+host: 0.0.0.0
+port: 8000

@@ -90,7 +90,6 @@ docker pull alpine:latest
 
 **IMPORTANT:** This should not require use of `sudo`.
 
-
 ## Elasticsearch 
 
 ### [One Time Only] Network and Images
@@ -137,6 +136,26 @@ curl localhost:9200
 # }
 ```
 
+### Stop Elasticsearch
+
+Stop the Elasticsearch service:
+
+```bash
+docker rm -f 802cb2596bbc
+```
+
+Replace the container id with your respective Elasticsearch docker container id.
+You can find this out by running:
+
+```bash
+docker ps -a
+
+# CONTAINER ID   IMAGE                                                  COMMAND                  CREATED        STATUS                    PORTS                                                NAMES
+# 2d7f0bdd7361   docker.elastic.co/kibana/kibana:7.14.2                 "/bin/tini -- /usr/l…"   5 hours ago    Up 5 hours                127.0.0.1:5601->5601/tcp                             kib01-test
+# 802cb2596bbc   docker.elastic.co/elasticsearch/elasticsearch:7.14.2   "/bin/tini -- /usr/l…"   5 hours ago    Up 5 hours                127.0.0.1:9200->9200/tcp, 127.0.0.1:9300->9300/tcp   es01-test
+# c6d0e6a541d2   hello-world                                            "/hello"                 31 hours ago   Exited (0) 31 hours ago                                                        silly_lewin
+```
+
 ### Start Kibana
 
 Start the Kibana service as a container:
@@ -148,6 +167,26 @@ docker run --name kib01-test --net elastic -p 127.0.0.1:5601:5601 -e "ELASTICSEA
 Check that the Kibana service is running. To do so, navigate to
 [localhost:5601](localhost:5601) in your preferred browser. You should see the Kibana
 UI render.
+
+### Stop Kibana
+
+Stop the Kibana service:
+
+```bash
+docker rm -f 2d7f0bdd7361
+```
+
+Replace the container id with your respective Kibana docker container id.
+You can find this out by running:
+
+```bash
+docker ps -a
+
+# CONTAINER ID   IMAGE                                                  COMMAND                  CREATED        STATUS                    PORTS                                                NAMES
+# 2d7f0bdd7361   docker.elastic.co/kibana/kibana:7.14.2                 "/bin/tini -- /usr/l…"   5 hours ago    Up 5 hours                127.0.0.1:5601->5601/tcp                             kib01-test
+# 802cb2596bbc   docker.elastic.co/elasticsearch/elasticsearch:7.14.2   "/bin/tini -- /usr/l…"   5 hours ago    Up 5 hours                127.0.0.1:9200->9200/tcp, 127.0.0.1:9300->9300/tcp   es01-test
+# c6d0e6a541d2   hello-world                                            "/hello"                 31 hours ago   Exited (0) 31 hours ago                                                        silly_lewin
+```
 
 
 ## Python Backend

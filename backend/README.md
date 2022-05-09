@@ -12,7 +12,7 @@ Benefits of FastAPI include:
 * Object-oriented API design
 * More efficient and lightweight than other frameworks like Flask & Django (apologies for the potentially controversial statement peeps)
 
-## Quickstart
+## Quickstart [One Time Only]
 
 Create a development virtual environment with dependencies installed:
 
@@ -38,6 +38,12 @@ In [2]:
 ```
 
 **IMPORTANT:** This import should succeed.
+
+Create a jupyter kernel based on the virtual environment:
+
+```bash
+python -m ipykernel install --prefix=/home/aborghi/.local --name proof
+```
 
 ## Common Operations
 
@@ -96,3 +102,45 @@ To execute unit tests:
 ```bash
 make test
 ```
+
+### Python Virtual Environment
+
+To start the python virtual environment (venv):
+
+```bash
+source .venv/proof/bin/activate
+```
+
+To stop the python venv:
+
+```bash
+deactivate
+```
+
+### FastAPI Python Server
+
+To start the FastAPI Python Server:
+
+```bash
+cd tools/
+python run.py
+```
+
+The OpenApi specification is automatically generated.
+The SwaggerUI to view the OpenAPI specification is available at [localhost:8000/docs](http://localhost:8000/docs).
+
+To save the OpenApi specification in `backend/`, do the following:
+
+```bash
+curl localhost:8000/docs/openapi.json > openapi.json
+```
+
+### Jupyter Lab
+
+To start jupyter lab:
+
+```bash
+jupyter lab
+```
+
+Then go to [localhost:8888](http://localhost:8888/) on your preferred browser.

@@ -1,6 +1,8 @@
 # Development Dependencies for venv
 -c requirements.txt
+ipykernel
 ipython
+jupyterlab
 pip-tools
 pycodestyle
 pytest

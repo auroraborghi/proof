@@ -4,11 +4,35 @@
 #
 #    pip-compile --no-emit-index-url --no-emit-trusted-host
 #
+anyio==3.5.0
+    # via starlette
+asgiref==3.5.1
+    # via uvicorn
 certifi==2021.10.8
     # via elasticsearch
+click==8.1.3
+    # via uvicorn
 colorama==0.4.4
     # via proof (setup.py)
 elasticsearch==7.14.2
     # via proof (setup.py)
+fastapi==0.76.0
+    # via proof (setup.py)
+h11==0.13.0
+    # via uvicorn
+idna==3.3
+    # via anyio
+pydantic==1.9.0
+    # via fastapi
+pyyaml==6.0
+    # via proof (setup.py)
+sniffio==1.2.0
+    # via anyio
+starlette==0.18.0
+    # via fastapi
+typing-extensions==4.2.0
+    # via pydantic
 urllib3==1.26.9
     # via elasticsearch
+uvicorn==0.17.6
+    # via proof (setup.py)
