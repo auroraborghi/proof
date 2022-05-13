@@ -12,6 +12,9 @@ Benefits of FastAPI include:
 * Object-oriented API design
 * More efficient and lightweight than other frameworks like Flask & Django (apologies for the potentially controversial statement peeps)
 
+## Shortcut
+To see what needs to be run in an easy to digest and Copy/Paste format, please see the install-dependencies.sh file.
+
 ## Quickstart [One Time Only]
 
 Create a development virtual environment with dependencies installed:
@@ -108,6 +111,7 @@ make test
 To start the python virtual environment (venv):
 
 ```bash
+cd ~/Developer/proof/backend
 source .venv/proof/bin/activate
 ```
 
@@ -118,10 +122,14 @@ deactivate
 ```
 
 ### FastAPI Python Server
+**IMPORTANT:** Ensure that you are running the following command in the virtual python environment and are in the backend folder. 
+This is done for you in the bash command block below for ease of use.
 
 To start the FastAPI Python Server:
 
 ```bash
+cd ~/Developer/proof/backend
+source .venv/proof/bin/activate
 cd tools/
 python run.py
 ```
@@ -136,11 +144,46 @@ curl localhost:8000/docs/openapi.json > openapi.json
 ```
 
 ### Jupyter Lab
+**IMPORTANT:** Ensure that you are running the following command in the virtual python environment and are in the backend folder. 
+This is done for you in the bash command block below for ease of use.
 
 To start jupyter lab:
 
 ```bash
+cd ~/Developer/proof/backend
+source .venv/proof/bin/activate
 jupyter lab
 ```
 
 Then go to [localhost:8888](http://localhost:8888/) on your preferred browser.
+
+## Python and VSCode Setup
+**IMPORTANT:** Remember to set your VSCode Python interpreter to the .venv/proof/bin/python file.
+
+Install the following VSCode Extensions (updated on May 2022):
+```bash
+code --list-extensions | xargs -L 1 echo code --install-extension
+code --install-extension alefragnani.project-manager
+code --install-extension alexiv.vscode-angular2-files
+code --install-extension codezombiech.gitignore
+code --install-extension CoenraadS.bracket-pair-colorizer-2
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension docsmsft.docs-yaml
+code --install-extension donjayamanne.git-extension-pack
+code --install-extension donjayamanne.githistory
+code --install-extension eamodio.gitlens
+code --install-extension esbenp.prettier-vscode
+code --install-extension GrapeCity.gc-excelviewer
+code --install-extension magicstack.MagicPython
+code --install-extension ms-azuretools.vscode-docker
+code --install-extension ms-kubernetes-tools.vscode-kubernetes-tools
+code --install-extension ms-python.python
+code --install-extension ms-python.vscode-pylance
+code --install-extension ms-toolsai.jupyter
+code --install-extension ms-toolsai.jupyter-keymap
+code --install-extension ms-vscode-remote.remote-containers
+code --install-extension oderwat.indent-rainbow
+code --install-extension redhat.vscode-commons
+code --install-extension redhat.vscode-yaml
+code --install-extension ziyasal.vscode-open-in-github.
+```

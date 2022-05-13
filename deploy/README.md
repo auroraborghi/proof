@@ -1,5 +1,8 @@
 # Proof Setup Instructions
 
+## Shortcut
+To see what needs to be run in an easy to digest and Copy/Paste format, please see the install-dependencies.sh file.
+
 ## Docker
 
 ### [One Time Only] Remove Existing Docker
