@@ -10,8 +10,10 @@ until [ "$()" == "" ]; do
     sleep 0.1;
 done;
 
+# For Elasticsearch Docker deployment error (on their side).
+sudo systemctl restart docker
 # Start Elasticsearch in new tab and wait for Elasticsearch to complete.
-gnome-terminal --tab --title="ELASTICSEARCH" -- bash -c 'docker run --name es01-test --net elastic -p 127.0.0.1:9200:9200 -p 127.0.0.1:9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.14.2; bash'
+docker run --name es01-test --net elastic -p 127.0.0.1:9200:9200 -p 127.0.0.1:9300:9300 -e "discovery.type=single-node" docker.elastic.co/elasticsearch/elasticsearch:7.14.2
 # Start Kibana in new tab and wait for it to complete.
 gnome-terminal --tab --title="KIBANA" -- bash -c 'docker run --name kib01-test --net elastic -p 127.0.0.1:5601:5601 -e "ELASTICSEARCH_HOSTS=http://es01-test:9200" docker.elastic.co/kibana/kibana:7.14.2; bash'
 # Go to backend folder and run the python virtual environment and FASTAPI in a new tab.
